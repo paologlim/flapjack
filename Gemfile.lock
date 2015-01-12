@@ -73,6 +73,7 @@ GEM
     msgpack (0.5.10)
     multi_json (1.10.1)
     multi_test (0.1.1)
+    mysql2 (0.3.17)
     numerizer (0.1.1)
     oj (2.11.4)
     pact (1.5.0)
@@ -172,6 +173,7 @@ DEPENDENCIES
   cucumber (>= 2.0.0.beta.3)
   delorean
   flapjack!
+  mysql2
   pact
   rack-test
   rake

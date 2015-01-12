@@ -14,4 +14,5 @@ group :test do
   gem 'webmock'
   gem 'pact'
   gem 'simplecov', :require => false
+  gem 'mysql2'
 end

@@ -24,6 +24,7 @@ require 'flapjack/gateways/pagerduty'
 require 'flapjack/gateways/email'
 require 'flapjack/gateways/sms_messagenet'
 require 'flapjack/gateways/sms_twilio'
+require 'flapjack/gateways/sms_gammu'
 require 'flapjack/gateways/web'
 require 'flapjack/logger'
 
@@ -139,7 +140,7 @@ module Flapjack
     class Generic < Flapjack::Pikelet::Base
 
      TYPES = ['notifier', 'processor', 'jabber', 'pagerduty', 'oobetet',
-              'email', 'sms', 'aws_sns', 'sms_twilio']
+              'email', 'sms', 'aws_sns', 'sms_twilio', 'sms_gammu']
 
       def start
         super do
@@ -215,6 +216,7 @@ module Flapjack
                               Flapjack::Gateways::Pagerduty::AckFinder],
              'sms'        => [Flapjack::Gateways::SmsMessagenet],
              'sms_twilio' => [Flapjack::Gateways::SmsTwilio],
+             'sms_gammu'  => [Flapjack::Gateways::SmsGammu],
              'aws_sns'    => [Flapjack::Gateways::AwsSns],
              'web'        => [Flapjack::Gateways::Web],
             }
