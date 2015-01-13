@@ -37,6 +37,7 @@ Gem::Specification.new do |gem|
   gem.add_dependency 'rbtrace'
   gem.add_dependency 'terminal-table'
   gem.add_dependency 'toml'
+  gem.add_dependency 'mysql2'
 
   gem.add_development_dependency 'rake'
 end
