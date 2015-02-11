@@ -36,6 +36,7 @@ daemonize = true
   email_queue = "email_notifications"
   sms_queue = "sms_notifications"
   sms_twilio_queue = "sms_twilio_notifications"
+  sms_gammu_queue = "sms_gammu_notifications"
   sns_queue = "sns_notifications"
   jabber_queue = "jabber_notifications"
   pagerduty_queue = "pagerduty_notifications"
@@ -111,6 +112,22 @@ daemonize = true
     #[gateways.sms_twilio.templates]
     #  rollup_text = "/etc/flapjack/templates/sms_twilio/rollup.text.erb"
     #  alert_text = "/etc/flapjack/templates/sms_twilio/alert.text.erb"
+  # Sends SMS notifications via Gammu
+  [gateways.sms_gammu]
+    enabled = true
+    queue = "sms_gammu_notifications"
+    from = "xxxxxxxxx"
+    mysql_host = "x.x.x.x"
+    mysql_database = "gammu"
+    mysql_username = "gammu"
+    mysql_password = "xxxxxxxx"
+    [gateways.sms_gammu.logger]
+      level = "INFO"
+      syslog_errors = true
+    # location of custom alert templates
+    [gateways.sms_gammu.templates]
+      rollup_text = '/etc/flapjack/templates/sms_gammu/rollup.text.erb'
+      alert_text = '/etc/flapjack/templates/sms_gammu/alert.text.erb'
   # Generates SNS notifications
   [gateways.sns]
     enabled = false
